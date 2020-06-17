@@ -1,0 +1,25 @@
+{
+  "name": "ohm-delivery",
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./__test__/",
+    "start": "node ./src/index.js"
+  },
+  "author": "Urbantz S.A.",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

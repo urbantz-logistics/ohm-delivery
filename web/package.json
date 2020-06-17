@@ -1,0 +1,20 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./app -a localhost -p 8000 -c-1 -P http://localhost:3000",
+    "postupdate-deps": "npm run copy-libs",
+    "postinstall": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/lib -C"
+  },
+  "author": "Urbantz S.A.",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "angular": "^1.7.4",
+    "cpx": "^1.5.0"
+  }
+}

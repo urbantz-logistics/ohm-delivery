@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="lib/angular/angular.js"></script>
+        <script src="./main.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Ohm Delivery</title>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>Ohm Delivery</h1>
+            <h2>Get shocked by the power</h2>
+        </div>
+        
+        <div ng-app="ohm-delivery">
+            <form ng-controller="tracking" ng-submit="sendData()">
+                <p>
+                    <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id"/>
+                </p>
+                <p>
+                    <button id="formBtn" type="submit">Submit</button>
+                </p>
+                <p>
+                    <span ng-if="errorMessage">{{errorMessage}}</span>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

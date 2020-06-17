@@ -1,0 +1,60 @@
+{
+    "ohms": [
+      {
+        "id": "0",
+        "trackingId": "1e62adfe",
+        "status": "IN_DELIVERY",
+        "comment": null,
+        "description": {
+          "volts": 12,
+          "amperes": 2
+        },
+        "client": {
+          "name": "John Doe",
+          "address": "13th Avenue, Los Diablos"
+        },
+        "history": [
+          {
+            "state": "CREATED",
+            "at": "123456789"
+          },
+          {
+            "state": "PREPARING",
+            "at": "123456789"
+          },
+          {
+            "state": "READY",
+            "at": "123456789"
+          },
+          {
+            "state": "IN_DELIVERY",
+            "at": "123456789"
+          }
+        ]
+      },
+      {
+        "id": "1",
+        "trackingId": "1da15ffe",
+        "status": "CREATED",
+        "comment": null,
+        "description": {
+          "volts": 12,
+          "amperes": 6
+        },
+        "client": {
+          "name": "Emma Appleseed",
+          "address": "1827 green street, Tree City"
+        },
+        "history": [
+          {
+            "state": "CRAETED",
+            "at": "123456789"
+          },
+          {
+            "state": "PREPARING",
+            "at": "123456709"
+          }
+        ]
+      }
+    ]
+  }
