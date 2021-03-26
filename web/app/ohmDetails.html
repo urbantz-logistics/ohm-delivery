@@ -1,0 +1,80 @@
+<div ng-if="ohm">
+    <div>
+        <h2>Ohm Details</h2>
+    </div>
+    <div class="flex">
+        <div class="third-width flex-column">
+            <b>
+                Tracking ID
+            </b> 
+            <p>
+                {{ ohm.trackingId }}
+            </p>
+        </div>
+        <div class="third-width flex-column">
+            <b>
+                No. of Amperes
+            </b> 
+            <p>
+                {{ ohm.description.amperes }}
+            </p>
+        </div>
+        <div class="third-width flex-column">
+            <b>
+                No. of Volts
+            </b> 
+            <p>
+                {{ ohm.description.volts }}
+            </p>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="third-width flex-column">
+            <b>
+                Customer Name
+            </b> 
+            <p>
+                {{ ohm.client.name }}
+            </p>
+        </div>
+        <div class="third-width flex-column">
+            <b>
+                Delivery Address
+            </b> 
+            <p>
+                {{ ohm.client.address }}
+            </p>
+        </div>
+        <div class="third-width flex-column">
+            <b>
+                Email
+            </b> 
+            <p>
+                {{ ohm.client.email }}
+            </p>
+        </div>
+    </div>
+    <div class="flex-column">
+        <b>
+            Tracking status
+        </b>
+        <div class="width-100 flex-row">
+            <div ng-repeat="status in ohm.history" class="flex status-box flex-column">
+                <b>
+                    {{ status.state }}
+                </b> 
+                <p>
+                    {{ status.at }}
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <button onclick="markAsDelivered()">
+                Mark as Delivered
+            </button>
+            <button>
+                Refuse Delivery
+            </button>
+        </div>
+    </div>
+</div>

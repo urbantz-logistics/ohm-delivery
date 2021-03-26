@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ohm-delivery">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="lib/angular/angular.js"></script>
-        <script src="./main.js"></script>
+        <script src="main.js"></script>
         <link rel="stylesheet" type="text/css" href="main.css">
         <title>Ohm Delivery</title>
     </head>
@@ -13,8 +13,8 @@
             <h2>Get shocked by the power</h2>
         </div>
         
-        <div ng-app="ohm-delivery">
-            <form ng-controller="tracking" ng-submit="sendData()">
+        <div ng-controller="tracking">
+            <form ng-submit="sendData()">
                 <p>
                     <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id"/>
                 </p>
@@ -22,9 +22,12 @@
                     <button id="formBtn" type="submit">Submit</button>
                 </p>
                 <p>
-                    <span ng-if="errorMessage">{{errorMessage}}</span>
+                    <span ng-if="errorMessage">{{errorMessage}} </span>
                 </p>
             </form>
+            <div ng-include=" 'ohmDetails.html' ">
+            
+            </div>
         </div>
     </body>
 </html>

@@ -10,8 +10,10 @@
         "amperes": 2
       },
       "client": {
+        "id": "user1",
         "name": "John Doe",
-        "address": "13th Avenue, Los Diablos"
+        "address": "13th Avenue, Los Diablos",
+        "email": "johndoe@email.com"
       },
       "history": [
         {
@@ -42,8 +44,10 @@
         "amperes": 6
       },
       "client": {
+        "id": "user2",
         "name": "Emma Appleseed",
-        "address": "1827 green street, Tree City"
+        "address": "1827 green street, Tree City",
+        "email": "emmaappleseed@email.com"
       },
       "history": [
         {
