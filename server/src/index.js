@@ -2,16 +2,28 @@ const shortid = require('shortid')
 var express = require('express');
 var app = express();
 const bodyParser = require('body-parser')
-const Utils = require('./utils');
-app.use(bodyParser.json())
+const { getOhmById, updateOhm } = require('./utils');
+app.use(bodyParser.json());
 
-function serve() {
-    app.get('/ohms/:id', async (req, res) => {
-        const ohm = await Utils.getOhmById(req.params.id);
-        res.send(ohm);
-    })
+app.get('/ohms/:id', async (req, res) => {
+    const ohm = await getOhmById(req.params.id)
+        .then(data => {
+            delete data.id;
+            res.send(data);
+        },
+        error => {
+            console.log("An error has ocurred")
+            res.send(error);
+        })
+})
 
-    app.listen(3000, () => console.log('listening on port 3000'));
-}
+app.post('/ohms/:id', async (req, res) => {
+    try {
+        updateOhm(req.params.id, req.body);
+    }
+    catch{
+        res.send("Failure to update")
+    }
+})
 
-serve();
+app.listen(3000, () => console.log('listening on port 3000'));

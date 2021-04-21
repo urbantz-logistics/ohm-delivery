@@ -12,10 +12,23 @@ const db = (async () => {
 async function getOhmById(id) {
     const _db = await db;
     const ohm = _db.get('ohms')
-        .find({ id })
-        .value()
-
+        .find({ trackingId: id })
+        .value();
     return ohm;
 }
 
-module.exports = { getOhmById }
+async function updateOhm(id, content) {
+  console.log(id, content);
+  const _db = await db;
+  return UpdateOhmComment(_db, id, content);;
+}
+
+function UpdateOhmComment(database, id, content){
+  const ohm = database.get('ohms')
+    .find({ trackingId: id })
+    .set('comment', content)
+    .write();
+  return ohm;
+}
+
+module.exports = { getOhmById, updateOhm }

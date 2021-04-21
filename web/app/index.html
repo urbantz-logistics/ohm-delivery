@@ -14,17 +14,30 @@
         </div>
         
         <div ng-app="ohm-delivery">
-            <form ng-controller="tracking" ng-submit="sendData()">
-                <p>
-                    <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id"/>
-                </p>
-                <p>
-                    <button id="formBtn" type="submit">Submit</button>
-                </p>
-                <p>
-                    <span ng-if="errorMessage">{{errorMessage}}</span>
-                </p>
-            </form>
+            <div ng-controller="tracking">
+                <form ng-submit="requestOhm()">
+                    <div class="input">
+                        <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id"/>
+                    </div>
+                    <div class="input">
+                        <button id="formBtn" type="submit" class="button">Submit</button>
+                    </div>                    
+                </form>
+                <div ng-if="trackingElement" class="tracking-element">
+                    <table>
+                        <tr ng-repeat="(key, value) in trackingElement">
+                            <th>{{key}}</th>
+                            <td>{{value}}</td>
+                        </tr>
+                    </table>
+                    <div class="tracking-update">
+                        <button ng-click="updateOhm()" class="update-button">Update</button>
+                    </div>
+                </div>
+                <div ng-if="errorDisplay" class="error-log" >
+                    <p>{{errorDisplay}}</p>
+                </div>
+            </div>            
         </div>
     </body>
 </html>

@@ -4,6 +4,10 @@ body {
     font-family: "Open Sans",serif;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .banner {
     background-color: dodgerblue;
 }
@@ -25,11 +29,95 @@ h2 {
 }
 
 input {
+    font-family: Arial, sans-serif;
     margin: 2em auto 1em;
     width: 50%;
 }
-p {
+
+.button{
+    font-family: Arial, sans-serif;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    padding: 12px 24px 10px;
+    text-transform: uppercase;
+    background-color: #412eeb;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    color:#ffffff;
+    font-weight: 700;
+    margin: 24px auto;
+}
+
+.button:hover{
+    background-color: #2f1fbe;
+}
+
+.input {
     text-align: center;
     margin: auto;
     line-height: 2.0;
+}
+
+.tracking-element{
+    width: min-content;
+    margin: 40px auto;
+    animation: 1s ease-out fadeIn;
+    border-radius: 20px;
+    background-color: #eaeaee;
+    padding: 20px;
+}
+
+.tracking-element th{
+    text-transform: uppercase;
+}
+
+.tracking-element th, .tracking-element td{
+    font-family: Arial, sans-serif;
+    padding: 12px;
+    animation: 1s ease-out fadeIn;
+}
+
+.tracking-update{
+    text-align: center;
+    margin: 40px 20px 20px;
+}
+
+.update-button{
+    font-family: Arial, sans-serif;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    padding: 12px 24px 10px;
+    text-transform: uppercase;
+    background-color: #776dcf;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    color:#ffffff;
+    font-weight: 700;
+}
+
+.update-button:hover{
+    background-color: #5e56a3;
+}
+
+.error-log{
+    width: 90%;
+    max-width: 400px;
+    margin: 40px auto;
+    animation: 1s ease-out fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.error-log p{
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
