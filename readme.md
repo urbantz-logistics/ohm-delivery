@@ -1,10 +1,12 @@
 
 # OHM DELIVERY
-ohm-delivery is a minimalistic project that you have to improve and build. 
+This is a fictional company minimalistic project that you have to fix and improve.
 
-The final customer receive the following trackingId `1e62adfe` by email and a link to the tracking page. 
+The company delivers electrical resitances and provides a tracking page to their drivers and customers.
 
-Improve the website to let the customer search for the status of the resistance. When delivered, the customer can acknowledge the delivery (or the failure) of the ordered resistance. 
+Improve the website to let the user search for the status of a resistance being delivered. When delivered, the driver should be able to acknowledge the delivery (or the failure) of the ordered resistance. 
+
+For this test, the user will receive the following trackingId `1e62adfe`. 
 
 
 ## How to use:
@@ -21,8 +23,8 @@ npm run test
 ## Instructions:
 
 ### Web:
-* Build the search to query the ohm informations and display the status to the customer.
-* Change the UI to finalize the status of the ohm object.
+* Build the search to query the resistance informations and display the status to the customer.
+* Allow on the UI for a driver to change the status of a delivery:
 	* Status can either be 'DELIVERED' or 'REFUSED'.
 	* If the status is 'REFUSED', ask the customer to provide a little piece of text as a failure reason.
 
