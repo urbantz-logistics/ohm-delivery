@@ -1,17 +1,15 @@
-const shortid = require('shortid')
-var express = require('express');
-var app = express();
-const bodyParser = require('body-parser')
-const Utils = require('./utils');
-app.use(bodyParser.json())
+const {OhmRepository} = require("./infrastructure/OhmRepository.js");
+const {LowdbStorage} = require("./infrastructure/storage/LowdbStorage.js");
+const path = require("path");
+const ohmDefaults = require("../db.config.json");
+const {serve} = require("./infrastructure/rest");
 
-function serve() {
-    app.get('/ohms/:id', async (req, res) => {
-        const ohm = await Utils.getOhmById(req.params.id);
-        res.send(ohm);
-    })
+const OHM_REPOSITORY_FILENAME = path.join(process.cwd(), "data", "ohm-db.json");
 
-    app.listen(3000, () => console.log('listening on port 3000'));
-}
+(async () => {
+    const ohmRepository = new OhmRepository(
+        await LowdbStorage.create(OHM_REPOSITORY_FILENAME, ohmDefaults)
+    );
 
-serve();
+    serve(ohmRepository);
+})();
