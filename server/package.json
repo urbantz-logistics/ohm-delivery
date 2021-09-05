@@ -10,16 +10,23 @@
   "main": "index.js",
   "scripts": {
     "test": "jest ./__test__/",
-    "start": "node ./src/index.js"
+    "start": "node --inspect src/index.js"
   },
   "author": "Urbantz S.A.",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "joi": "^17.4.2",
     "lowdb": "^1.0.0",
     "shortid": "^2.2.15"
   },
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "jest-extended": "^0.11.5"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
   }
 }
